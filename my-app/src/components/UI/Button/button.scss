@@ -1,0 +1,55 @@
+@import "../../../index.scss";
+
+//custom button general styles
+.button {
+  display: inline-block;
+  border: $border;
+  color: $black;
+  cursor: pointer;
+  background: none;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  @include flex(row);
+}
+
+//success button
+.button-success {
+  &:hover {
+    background: $green;
+    color: $white;
+  }
+
+  &:active {
+    background: $darkGreen;
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    background-color: rgb(55, 77, 55);
+    cursor: not-allowed;
+  }
+}
+
+//failed button
+.button-failed {
+  border: 2px solid rgb(181, 17, 17);
+
+  &:hover {
+    background: $red;
+    color: $white;
+  }
+
+  &:active {
+    background: $darkRed;
+    transform: scale(1.1);
+  }
+}
+
+//media
+@media (max-width: 640px) {
+  .button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+}

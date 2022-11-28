@@ -1,0 +1,60 @@
+@import "../../index.scss";
+
+//update-profile
+.update-profile {
+  @include flex(row);
+
+  .img {
+    align-self: center;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+  }
+
+  div {
+    width: 100%;
+    padding: 1rem 2rem;
+
+    label {
+      cursor: pointer;
+      font-size: 1.5rem;
+
+      &:hover {
+        font-size: 1.7rem;
+        color: $darkGreen;
+      }
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 2rem;
+
+      button {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+}
+
+//media
+@media (max-width: 991px) {
+  .update-profile {
+    @include flex(column);
+  }
+}
+
+@media (max-width: 640px) {
+  .update-profile {
+    div {
+      .buttons {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

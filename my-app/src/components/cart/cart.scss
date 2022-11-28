@@ -1,0 +1,59 @@
+@import "../../index.scss";
+
+.cart {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+
+  .total-price {
+    padding: 5px;
+    color: $darkGreen;
+    align-self: flex-end;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $darkGreen;
+    }
+
+    thead {
+      tr {
+        th {
+          color: $darkGreen;
+          text-align: center;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .cart {
+    table {
+      thead {
+        tr {
+          th {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    .total-price {
+      font-size: 1.5rem;
+    }
+  }
+}

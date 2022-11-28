@@ -1,0 +1,53 @@
+@import "../../index.scss";
+
+//modal box
+.modal {
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal__content {
+    padding: 1.5rem;
+    max-height: 90%;
+    border-radius: 12px;
+    background-color: $white;
+    z-index: 1002;
+    width: 50%;
+    transform: scale(0.5);
+    transition: 0.5s;
+    text-align: center;
+    color: $green;
+    font-weight: 500;
+    font-size: 1.875rem;
+    text-transform: none;
+    overflow: auto;
+
+    &.active {
+      transform: scale(1);
+    }
+  }
+}
+
+//media
+@media (max-width: 992px) {
+  .modal {
+    .modal__content {
+      width: 80%;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+@import "../../index.scss";
+
+// header section
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: $black;
+    font-weight: bolder;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .header__menu {
+    @include flex(row);
+
+    .navbar {
+      @include flex(row);
+
+      ul {
+        @include flex(row);
+        margin-right: 2rem;
+
+        li {
+          margin-right: 2rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $black;
+
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+      }
+
+      #nav-close {
+        font-size: 5rem;
+        cursor: pointer;
+        color: $black;
+        display: none;
+      }
+
+      .avatar {
+        position: relative;
+
+        &:hover {
+          span {
+            display: inline-block;
+          }
+        }
+
+        img {
+          margin: 0 auto;
+          height: 3.5rem;
+          width: 3.5rem;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        span {
+          display: none;
+          color: $darkGreen;
+          font-weight: bold;
+          position: absolute;
+          bottom: -1rem;
+          left: 0;
+        }
+      }
+    }
+
+    .icons {
+      svg {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-left: 2rem;
+        cursor: pointer;
+        color: $black;
+
+        &:hover {
+          color: $green;
+        }
+      }
+
+      #menu-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+// media queries
+@media (max-width: 1200px) {
+  .header {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .header__menu {
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: -150%;
+        background-color: $light-bg;
+        z-index: 1001;
+        width: 30rem;
+        height: 100%;
+
+        &.active {
+          left: 0;
+          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+        }
+
+        ul {
+          @include flex(column);
+          text-align: center;
+          margin-right: 0;
+
+          li {
+            margin: 0 0 2rem 0;
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+
+        .avatar {
+          display: none;
+        }
+
+        #nav-close {
+          display: block;
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+        }
+      }
+
+      .icons {
+        #menu-btn {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}

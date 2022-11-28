@@ -1,0 +1,84 @@
+@import "../../../index.scss";
+
+//review styles
+.review-box {
+  width: 49%;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+  background-color: $light-bg;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+
+  &:hover {
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+  }
+
+  .box-top {
+    display: flex;
+    justify-content: space-between;
+
+    .profile {
+      display: flex;
+      align-items: center;
+
+      .profile-img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .name-user {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+          color: $darkGreen;
+          font-size: 1.7rem;
+          letter-spacing: 0.5px;
+        }
+
+        span {
+          color: $green;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+
+  .comment {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    color: $black;
+
+    .comment-remove {
+      align-self: flex-end;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $red;
+
+      &:hover {
+        color: $darkRed;
+      }
+    }
+  }
+}
+
+//media
+@media (max-width: 768px) {
+  .review-box {
+    width: 90%;
+  }
+}

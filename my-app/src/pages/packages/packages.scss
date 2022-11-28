@@ -1,0 +1,9 @@
+@import "../../index.scss";
+
+//packages page
+.packages {
+  .box-container {
+    @include grid(31rem);
+    align-content: stretch;
+  }
+}

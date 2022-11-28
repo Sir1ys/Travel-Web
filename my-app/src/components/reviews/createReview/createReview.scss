@@ -1,0 +1,30 @@
+@import "../../../index.scss";
+
+//create-review styles
+.create-review {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: $darkGreen;
+  }
+
+  div {
+    margin-bottom: 1rem;
+  }
+
+  .create-review__buttons {
+    display: flex;
+    align-self: flex-end;
+    gap: 10px;
+  }
+}
+
+//media
+@media (max-width: 768px) {
+  .create-review {
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import "../../index.scss";
+
+//container form settings
+.container-form {
+  width: 800px;
+  height: 500px;
+  padding: 40px 0;
+  position: relative;
+
+  //block settings
+  .block {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+
+    .block__item {
+      @include flex(column);
+      width: 50%;
+    }
+
+    .block-item {
+      text-align: center;
+
+      .title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $white;
+        margin-bottom: 10px;
+        text-transform: none;
+      }
+
+      .button {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: $white;
+        color: $darkGreen;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: none;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  //form settings
+  .form-box {
+    background-color: $white;
+    height: 100%;
+    width: 50%;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+
+    @include flex(row);
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    transition: 0.5s ease-in-out;
+
+    &.active {
+      left: 50%;
+
+      .form_signIn {
+        left: -100%;
+        transition-delay: 0s;
+      }
+
+      .form_signUp {
+        left: 0;
+        transition-delay: 0.25s;
+      }
+    }
+
+    .form {
+      width: 100%;
+      padding: 50px;
+      font-size: 1.3rem;
+      position: absolute;
+      transition: 0.5s;
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: $darkGreen;
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    .form_signIn {
+      left: 0;
+      transition-delay: 0.25s;
+    }
+
+    .form_signUp {
+      left: 100%;
+      transition-delay: 0s;
+    }
+  }
+}
+
+//media
+@media (max-width: 992px) {
+  .container-form {
+    max-width: 400px;
+    height: 650px;
+    padding: 0;
+    margin: 0 20px;
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .block__item {
+        width: 100%;
+        padding: 30px 0;
+      }
+    }
+
+    .form-box {
+      width: 100%;
+      height: 500px;
+      box-shadow: none;
+      top: 0;
+
+      &.active {
+        top: 150px;
+        left: 0;
+      }
+    }
+  }
+}

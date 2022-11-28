@@ -1,0 +1,33 @@
+@import "../../index.scss";
+
+//reviews
+.reviews {
+  .rewiews-block {
+    margin-bottom: 2rem;
+
+    div {
+      @include flex(row);
+      font-size: 2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: bold;
+      color: $darkGreen;
+    }
+  }
+
+  .box-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+//media
+@media (max-width: 768px) {
+  .reviews .box-container {
+    @include flex(column);
+  }
+}

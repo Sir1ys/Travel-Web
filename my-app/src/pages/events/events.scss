@@ -1,0 +1,8 @@
+@import "../../index.scss";
+
+//events page
+.events {
+  .box-container {
+    @include grid(30.4135rem);
+  }
+}

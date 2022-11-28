@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
+
+$green: #308f57;
+$darkGreen: #12542e;
+$black: #10221b;
+$white: #eee;
+$light-bg: #e3e6f3;
+$border: 0.2rem solid $black;
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+$red: rgb(181, 17, 17);
+$darkRed: rgb(88, 8, 8);
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}
+
+@mixin flex($val) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $val;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+//general
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $black;
+  }
+}
+
+body {
+  background-color: $light-bg;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+  padding: 0;
+}
+
+section {
+  padding: 0 9%;
+  margin-bottom: 3rem;
+}
+
+//general classes styles
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  color: $black;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: $darkGreen;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 130rem;
+}
+
+// general media
+@media (max-width: 1200px) {
+  section {
+    padding: 3rem 2rem;
+  }
+}

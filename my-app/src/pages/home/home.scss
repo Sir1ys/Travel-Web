@@ -1,0 +1,140 @@
+@import "../../index.scss";
+
+//home page
+.home {
+  padding: 0;
+
+  // home-slider
+  .home-slider {
+    .box {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-size: cover !important;
+      background-position: center !important;
+      object-fit: cover;
+      justify-content: flex-end;
+      padding: 2rem 9%;
+
+      .content {
+        width: 50rem;
+
+        span {
+          font-size: 4rem;
+          color: $darkGreen;
+        }
+
+        h3 {
+          font-size: 6rem;
+          color: $darkGreen;
+          padding-top: 0.5rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          line-height: 2;
+          color: $white;
+          font-size: 1.5rem;
+          padding: 1rem 0;
+        }
+      }
+    }
+    .box-second {
+      justify-content: flex-start;
+    }
+  }
+
+  //modal settings
+  .modal {
+    .modal__content {
+      h3 {
+        color: $darkGreen;
+        margin-bottom: 2rem;
+      }
+      span {
+        font-size: 1.5rem;
+      }
+      .content {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+        div {
+          a {
+            color: $darkGreen;
+
+            svg {
+              display: block;
+              font-size: 3rem;
+              margin: 0 auto;
+            }
+
+            span {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //swiper-button
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 3rem;
+    color: $black;
+  }
+}
+
+// media
+@media (max-width: 991px) {
+  .home {
+    .home-slider {
+      .box {
+        padding: 2rem;
+        justify-content: center;
+        background-position: right !important;
+
+        .content {
+          text-align: center;
+          span {
+            font-size: 3rem;
+          }
+
+          h3 {
+            font-size: 4rem;
+          }
+        }
+      }
+
+      .box-second {
+        justify-content: center;
+        background-position: left !important;
+      }
+    }
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    .modal {
+      .modal__content {
+        h3 {
+          color: $darkGreen;
+          margin-bottom: 1rem;
+        }
+        span {
+          font-size: 1.25rem;
+        }
+        .content {
+          margin-top: 2.5rem;
+        }
+      }
+    }
+  }
+}

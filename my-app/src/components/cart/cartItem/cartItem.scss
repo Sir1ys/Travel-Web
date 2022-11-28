@@ -1,0 +1,106 @@
+@import '../../../index.scss';
+
+.cart table tbody {
+    tr {
+        td {
+            padding: 10px 5px; 
+            text-align: center;
+    
+            .pound-icon {
+                font-size: 1.75rem;
+            }
+    
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+    
+                img {
+                    width: 10rem;
+                    height: 10rem;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+    
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+    
+                    small {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+    
+                    button {
+                        background-color: $white;
+                        color: $red;
+                        font-size: 1.4rem;
+                        &:hover {
+                            color: $darkRed;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .cart table tbody {
+        tr {
+            td {
+                .cart-info {
+                    display: flex;
+                    flex-direction: row;
+                    img {
+                        width: 7rem;
+                        height: 7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .cart table tbody {
+        tr {
+            td {
+                font-size: 1.2rem;
+                font-weight: bold;
+                
+                .pound-icon {
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                }
+    
+                .content {
+                    img {
+                        display: none;
+                    }
+    
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+    
+                        p{
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            text-align: left;
+                        }
+    
+                        .cart-info__button {
+                            font-size: 1.1rem;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}    

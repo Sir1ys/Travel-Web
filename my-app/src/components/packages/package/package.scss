@@ -1,0 +1,84 @@
+@import "../../../index.scss";
+
+//package
+.package-box {
+  @include flex(column);
+  justify-content: space-between;
+  text-align: center;
+  background: $white;
+  box-shadow: $box-shadow;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: $black;
+
+    .content {
+      p {
+        color: $white;
+      }
+
+      button {
+        border-color: $white;
+        color: $white;
+      }
+    }
+  }
+
+  .image {
+    height: 25rem;
+    overflow: hidden;
+    padding: 2rem;
+    padding-bottom: 0;
+    border-radius: 0.5rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .content {
+    padding: 2rem;
+    @include flex(column);
+    flex-grow: 1;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 2rem;
+      color: $green;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $black;
+      padding: 1rem 0;
+      line-height: 2;
+    }
+
+    .price {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      justify-content: space-around;
+      font-size: 2rem;
+      gap: 1rem;
+      color: $green;
+      margin-bottom: 1rem;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+}
+
+//media
+@media (max-width: 600px) {
+  .package-box {
+    width: 95%;
+  }
+}

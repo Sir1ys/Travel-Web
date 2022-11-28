@@ -1,0 +1,111 @@
+@import "../../../index.scss";
+
+//event-box box
+.event-box {
+  @include flex(column);
+  justify-content: space-between;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  box-shadow: $box-shadow;
+  border-radius: 1rem;
+  background-color: $white;
+
+  &:hover {
+    background-color: $black;
+
+    p {
+      color: $white;
+    }
+
+    .content {
+      h3 {
+        font-size: 2rem;
+        color: $green;
+      }
+      p {
+        font-size: 1.5rem;
+        color: $white;
+        padding: 1rem 0;
+        line-height: 2;
+      }
+
+      .buttons {
+        button {
+          color: $white;
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  img {
+    height: 30rem;
+    width: 30rem;
+    border-radius: 50%;
+    padding: 1rem 1rem;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 2rem;
+    @include flex(column);
+    flex-grow: 1;
+    justify-content: space-between;
+
+    span {
+      color: $green;
+      font-size: 2rem;
+    }
+
+    .buttons {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      color: $green;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $black;
+      padding: 1rem 0;
+      line-height: 2;
+    }
+
+    .price-info {
+      width: 100%;
+      @include flex(row);
+      justify-content: space-between;
+
+      .cart {
+        svg {
+          cursor: pointer;
+          font-size: 2rem;
+          color: $green;
+
+          &:hover {
+            color: $light-bg;
+          }
+
+          &:active {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+//media
+@media (max-width: 600px) {
+  .event-box {
+    width: 95%;
+    padding: 5px;
+    margin: 5px;
+  }
+}
